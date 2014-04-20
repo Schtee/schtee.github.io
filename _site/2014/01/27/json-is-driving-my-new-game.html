@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>JSON Is Driving My New Game</title>
+        <meta name="viewport" content="width=device-width">
+
+        <!-- syntax highlighting CSS -->
+        <link rel="stylesheet" href="/css/syntax.css">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/css/main.css">
+
+    </head>
+    <body>
+
+        <div class="site">
+          <div class="header">
+            <h1 class="title"><a href="/">MakeGames</a></h1>
+          </div>
+
+          <h2>JSON Is Driving My New Game</h2>
+<p class="meta">27 Jan 2014</p>
+
+<div class="post">
+<p>I&#39;ve begun work on a game idea that&#39;s been bouncing off the inside wall of my brain for a couple of years now. I&#39;m (obviously) convinced it&#39;s going to be the greatest thing that&#39;s ever been achieved by any being so I won&#39;t go into any gameplay details until I actually have something to show of it. There&#39;s going to be a lot of systemsy stuff in it, so I&#39;ve implemented an <a href="http://en.wikipedia.org/wiki/Entity_component_system">entity/component system (or ECS)</a> in <a href="http://haxe.org/">Haxe</a>. This enables me to write my code in terms of <code>Entities</code>, <code>Components</code> and <code>Systems</code>. My Entities are (more or less) a collection of Components. My Systems register interest with combinations of Components so that they can be notified when a relevant Entity becomes active and can then manipulate is as appropriate. For example my <code>TouchSystem</code> is interested in Entities that have a <code>TouchableComponent</code> and a <code>SpriteComponent</code> (so they know how big the touchable area for the entity is).<br>
+One interesting outcome of this approach is it keeps the data very separate from the functionality - Components are just dumb data holders, while the Systems provide the functionality, based on Component composition. I had a plan about how I could leverage this...</p>
+
+<p>I&#39;ve used Unity quite a bit, both professionally and for-funsies, and really appreciate its editor. It gives you the ability to build entities out of components with a drag and drop interface, the effects of which can be seen before you very eyes over in the live-updating 3D views. While I have no intention of writing a full editor for my game I wanted to achieve some degree of development, beyond just level editing, without having to touch the code. I&#39;m using <a href="https://github.com/Kasoki/openfl-tiled">OpenFLTiled</a> to allow me to import <a href="http://www.mapeditor.org">Tiled</a> maps into my game. Tiled also lets you add arbitrary string to string key-value data to the map and its objects. My plan was this: store the types of components, and their initial data, right there in the map.<br>
+I implemented a step in the loading of the level that will iterate through the objects in the map and get hold of all the data they store. For each object I spawn an entity. For each key-value pair I use the key as a string representation of a type of component (literally its class name). The value is interpreted as a JSON array, and I get back a bunch of values. Haxe has extensive <a href="http://en.wikipedia.org/wiki/Reflection_%28computer_programming%29">reflection</a> support, so I instantiate the component based on its class name, and pass the deserialised JSON array along to the constructor to build the component just from data stored in the Tiled map. In the map&#39;s data (as opposed to the objects in it) I specify a list of Systems to instantiate for this map (so we could turn off the Physics system for specific maps, for example). So now we can build unique combinations of Components right in Tiled. This is the main advantage ECS has over OO: we don&#39;t have to extend anything to add functionality - it&#39;s all based on run time composition. We can then specify which Systems we want to exist, save it and run the game. Once I have a good library of Components and Systems implemented I can see this leading to a very Unity-like(-a-bit), editor driven workflow for Super Secret Game X.</p>
+
+</div>
+
+
+          <div class="footer">
+            <div class="contact">
+              <p>
+                Stephen <a href="http://www.twitter.com/schtee">"Schtee"</a> Taylor
+              </p>
+            </div>
+          </div>
+        </div>
+
+    </body>
+</html>

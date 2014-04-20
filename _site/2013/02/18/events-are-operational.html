@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Events Are Operational</title>
+        <meta name="viewport" content="width=device-width">
+
+        <!-- syntax highlighting CSS -->
+        <link rel="stylesheet" href="/css/syntax.css">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/css/main.css">
+
+    </head>
+    <body>
+
+        <div class="site">
+          <div class="header">
+            <h1 class="title"><a href="/">MakeGames</a></h1>
+          </div>
+
+          <h2>Events Are Operational</h2>
+<p class="meta">18 Feb 2013</p>
+
+<div class="post">
+<p>I have implemented my proposal outlined in the previous post and all it&#39;s working great. There&#39;s a base TriggerComponent class which holds a pointer to its action. PositionTriggerComponent extends TriggerComponent, and PositionTriggerSubSystem checks for objects occupying PositionTriggerComponent-Entities&#39; tiles and sets the triggered flag on their Actions. Finally, classes inheriting from ActionSubsystem decide how to handle their actions being triggered. This is working for a simple DebugActionComponent/SubSystem but the idea should apply to anything else. Getting closer to being able to make a game.</p>
+
+</div>
+
+
+          <div class="footer">
+            <div class="contact">
+              <p>
+                Stephen <a href="http://www.twitter.com/schtee">"Schtee"</a> Taylor
+              </p>
+            </div>
+          </div>
+        </div>
+
+    </body>
+</html>
