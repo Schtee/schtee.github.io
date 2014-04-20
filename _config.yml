@@ -1,3 +1,4 @@
 name: MakeGames
 markdown: redcarpet
 pygments: true
+paginate: 5
