@@ -126,7 +126,7 @@ a:visited { color: #F26835; }
 
 /* standard */
 .post pre {
-  border: 1px solid #ddd;
+  border: 1px dotted #2A8782;
   background-color: #9FD6AE;
   padding: 0 .4em;
 }
