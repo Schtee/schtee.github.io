@@ -12,12 +12,15 @@
         <!-- Custom CSS -->
         <link rel="stylesheet" href="/css/main.css">
 
+        <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="/feed.xml">
+
     </head>
     <body>
 
         <div class="site">
           <div class="header">
             <h1 class="title"><a href="/">{{ site.name }}</a></h1>
+            <h2 class="description">{{ site.description }}</h2>
           </div>
 
           {{ content }}
