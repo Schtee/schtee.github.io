@@ -41,7 +41,8 @@ a:visited { color: #F26835; }
   font-size: 115%;
   text-align: justify;
   width: 42em;
-  margin: 3em auto 2em;
+  margin: 1em auto 2em;
+  padding: 0 2em;
   line-height: 1.5em;
 }
 
