@@ -1,8 +1,10 @@
-/*****************************************************************************/
-/*
-/* Common
-/*
-/*****************************************************************************/
+---
+---
+
+$schemelightblue:#51c2ec;
+$schemedarkblue:#217ea0;
+
+$dividercolor:$schemedarkblue;
 
 html, body { height:100%; }
 
@@ -43,7 +45,7 @@ a:hover
 
 a:link, a:visited
 {
-   color:#217ea0;
+   color:$schemedarkblue;
 }
 
 a:hover
@@ -68,7 +70,7 @@ line-height:1.5em;
 
 .header
 {
-	border-bottom:1px dotted #217ea0;
+	border-bottom:1px dotted $dividercolor;
    width:100%;
 }
 
@@ -93,8 +95,8 @@ line-height:1.5em;
 
 .feature2 p
 {
-   border-left:1px dotted #217ea0;
-   border-right:1px dotted #217ea0;
+   border-left:1px dotted $dividercolor;
+   border-right:1px dotted $dividercolor;
 }
 
 .feature3
