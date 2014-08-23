@@ -3,7 +3,18 @@ layout: default
 title: MakeGames
 ---
 
-<div class="posts">
+<div class="features">
+   {% for post in site.posts limit:site.featured_article_count %}
+   <a href="#{{post.title}}">
+      <div class="feature{{ forloop.index }}">
+         <h1>{{ post.title }}</h1>
+         <p>{{ post.excerpt | strip_html | truncatewords:25 }}</p>
+      </div>
+   </a>
+   {% endfor %}
+</div>
+
+<div class="content">
    <div class="post">
       {% for post in paginator.posts %}
          <a name="{{ post.title }}"></a>

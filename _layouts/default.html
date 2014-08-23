@@ -7,10 +7,10 @@
 		<meta name="viewport" content="width=device-width">
 
 		<!-- syntax highlighting CSS -->
-		<link rel="stylesheet" href="css/syntax.css">
+		<link rel="stylesheet" href="/css/syntax.css">
 
 		<!-- Custom CSS -->
-		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="/css/main.css">
 
 		<link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="/feed.xml">
 	</head>
@@ -23,18 +23,7 @@
 				</div>
 			</div>
 
-			<div class="features">
-				{% for post in site.posts limit:3 %}
-				<div class="feature{{ forloop.index }}" onclick="location.href = '#{{post.title}}';">
-					<h1>{{ post.title }}</h1>
-					<p>{{ post.excerpt | strip_html | truncatewords:25 }}</p>
-				</div>
-				{% endfor %}
-			</div>
-
-			<div class="content">
-				{{ content }}
-			</div>
+			{{ content }}
 
 			<div class="footer">
 				<div class="contact">
