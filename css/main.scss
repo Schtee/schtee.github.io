@@ -5,6 +5,8 @@ $schemelightblue:#51c2ec;
 $schemedarkblue:#217ea0;
 
 $dividercolor:$schemedarkblue;
+$dividerlength:80%;
+$dividerpadding:(100% - $dividerlength) / 2;
 
 html, body { height:100%; }
 
@@ -26,11 +28,6 @@ h1
 h2
 {
    font-size:1.2em;
-}
-
-p
-{
-	padding:1em;
 }
 
 a:link, a:visited, a:hover
@@ -70,37 +67,57 @@ line-height:1.5em;
 
 .header
 {
-	border-bottom:1px dotted $dividercolor;
    width:100%;
+}
+
+.logo h2
+{
+   font-weight:normal;
+}
+
+.header:after
+{
+   content:"";
+   display:block;
+   position:relative;
+   left:$dividerpadding;
+   width:$dividerlength;
+   border-bottom:1px dotted $dividercolor;
 }
 
 .features
 {
    float:left;
    width:100%;
-   clear:bottom;
+   height:15em;
 }
 
-.feature1
+.feature1, .feature2, .feature3
 {
-	width:33%;
+	width:32%;
 	float:left;
+   height:100%;
+   padding-left:0.4em;
 }
 
-.feature2
+.feature1 h1, .feature2 h1, .feature3 h1, .feature1 p, .feature2 p, .feature3 p
 {
-   width:33%;
+}
+
+.feature2:before, .feature3:before
+{
+   display:block;
    float:left;
-}
-
-.feature2 p
-{
+   height:$dividerlength;
+   position:relative;
+   top:$dividerpadding;
+   left:-0.4em;
+   width:1px;
+   content:"";
    border-left:1px dotted $dividercolor;
-   border-right:1px dotted $dividercolor;
 }
 
-.feature3
+.content
 {
-   width:33%;
-   float:left;
+   clear:both;
 }
