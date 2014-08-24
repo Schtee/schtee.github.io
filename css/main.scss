@@ -136,6 +136,13 @@ line-height:1.5em;
    margin-right:0.3em;
 }
 
+.post pre
+{
+   border:1px dotted $dividercolor;
+   background-color:$schemelightblue;
+   padding:0.5em;
+}
+
 .pagination, .footer
 {
    text-align:center;
