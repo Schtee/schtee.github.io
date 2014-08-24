@@ -2,5 +2,6 @@ name: MakeGames
 description: Words and more from Stephen "Schtee" Taylor
 url: http://www.makegames.co.uk
 highlighter: true
+markdown: redcarpet
 paginate: 5
 featured_article_count: 3
