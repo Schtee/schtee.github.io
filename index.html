@@ -3,6 +3,7 @@ layout: default
 title: MakeGames
 ---
 
+{% if paginator.previous_page == null %}
 <div class="features">
    {% for post in site.posts limit:site.featured_article_count %}
    <a href="#{{post.id}}">
@@ -13,6 +14,7 @@ title: MakeGames
    </a>
    {% endfor %}
 </div>
+{% endif %}
 
 <div class="content">
    <div class="post">
