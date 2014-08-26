@@ -8,6 +8,9 @@ $dividercolor:$schemedarkblue;
 $dividerlength:80%;
 $dividerpadding:(100% - $dividerlength) / 2;
 
+$sitewidth:700px;
+$featurewidth:$sitewidth * 0.32;
+
 html, body { height:100%; }
 
 body
@@ -91,15 +94,48 @@ line-height:1.5em;
    float:left;
    width:100%;
    height:12em;
-   overflow:hidden;
 }
 
 .feature1, .feature2, .feature3
 {
-	width:32%;
+   width:32%;
 	float:left;
    height:100%;
    padding-left:0.4em;
+}
+
+@media screen and (max-width:$featurewidth * 3)
+{
+   .feature1, .feature2
+   {
+      width:48%;
+   }
+
+   .feature3
+   {
+      display:none;
+   }
+}
+
+@media screen and (max-width:$featurewidth * 2)
+{
+   .feature1
+   {
+      width:100%;
+   }
+
+   .feature2, .feature3
+   {
+      display:none;
+   }
+}
+
+@media screen and (max-width:$featurewidth)
+{
+   .feature1, .feature2, .feature3
+   {
+      display:none;
+   }
 }
 
 .feature1 h1, .feature2 h1, .feature3 h1, .feature1 p, .feature2 p, .feature3 p
