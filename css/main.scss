@@ -65,7 +65,7 @@ a:hover
 .header
 {
    width:100%;
-   margin-bottom:2em;
+   margin-bottom:1em;
 }
 
 .logo h1
@@ -91,13 +91,17 @@ a:hover
 .features
 {
    margin-top:0;
+   margin-bottom:1em;
    float:left;
    width:100%;
+   display:-webkit-flex;
+   display:flex;
+   -webkit-align-items: stretch;
+   align-items:stretch;
 }
 
 .feature1, .feature2, .feature3
 {
-   width:32%;
 	float:left;
    height:100%;
    padding-left:0.4em;
