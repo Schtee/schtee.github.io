@@ -180,6 +180,7 @@ a:hover
    border:1px dotted $dividercolor;
    background-color:$schemelightblue;
    padding:0.5em;
+   overflow:auto;
 }
 
 .pagination, .footer
