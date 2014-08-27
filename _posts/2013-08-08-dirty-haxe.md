@@ -4,6 +4,7 @@ layout: post
 date: 2013-08-08
 ---
 I'm working on my first ever [Haxe](http://www.haxe.org) project and I am loving it. Haxe is a free, open source, object-oriented, cross platform, multi-target, ActionScript-like language and compiler. From one project you can generate:
+
 * a compiled SWF, with support for a bunch of Flash versions
 * JavaScript
 * PHP
