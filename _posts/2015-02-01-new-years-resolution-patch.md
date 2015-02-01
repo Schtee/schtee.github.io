@@ -32,7 +32,7 @@ If you're familiar with the game you'll notice that all the game objects outside
 Solution: patch the executable in memory right before running it, just as Olly does.
 
 ## Rolling a debugger
-A quick bit of googling showed me that in order to modify executable code on the fly in Windows you basically have to write a debugger. This sounded very intimidating. I continued my research and it turned out to be conceptually very simple. This is all that's required is a C++ project to do the following:
+A quick bit of googling showed me that in order to modify executable code on the fly in Windows you basically have to write a debugger. This sounded very intimidating. I continued my research and it turned out to be conceptually very simple. All that's required is a C++ project to do the following:
 
 * Make a call to [`CreateProcess`](https://msdn.microsoft.com/en-us/library/windows/desktop/ms682425%28v=vs.85%29.aspx), passing the `DEBUG_PROCESS` flag. This starts a child process owned by your executable, which sends debugger-relevant events to your code.
 * While you're interested in these debugger events, call [`WaitForDebugEvent`](https://msdn.microsoft.com/en-us/library/windows/desktop/ms681423%28v=vs.85%29.aspx)/[`ContinueDebugEvent`](https://msdn.microsoft.com/en-us/library/windows/desktop/ms679285%28v=vs.85%29.aspx). The only event I needed was `CREATE_PROCESS_DEBUG_EVENT`, so I handled that in a (very small) switch statement. When this event arrives I make a call [`DebugSetProcessKillOnExit`](https://msdn.microsoft.com/en-us/library/windows/desktop/ms679307%28v=vs.85%29.aspx), passing in `false`, so after my patch is applied my program can close, leaving the game process to live on. I then...
