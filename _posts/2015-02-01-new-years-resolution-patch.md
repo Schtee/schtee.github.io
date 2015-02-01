@@ -15,7 +15,7 @@ The first step was to figure out what resolution the game runs at out of the box
 
 I deduced the game to be rendering at a 90s-classic 640x480. I opened up game in the trusty debugger, [OllyDBG](http://www.ollydbg.de/), and began investigating the heck out of it.
 
-I searched for the number constant 640, set a breakpoint on each reference and ran the game. One of these was hit very early on in the initialization, and was proceded by a reference to 480 - strong candidate! (ignore the fact that the offsets are from `patched` - I'd already backed up the original executable)
+I searched for the number constant 480, set a breakpoint on each reference and ran the game. One of these was hit very early on in the initialization, and was proceded by a reference to 640 - strong candidate! (ignore the fact that the offsets are from `patched` - I'd already backed up the original executable)
 
 ![Reference to 640x480]({{ site.url }}/images/2015-02-01-new-years-resolution-patch/referencesTo640x480.jpg)
 
