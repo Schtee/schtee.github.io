@@ -60,6 +60,6 @@ Note the extra dudes in the bottom right. Amazing! I then jumped over to my proj
 
 ![Smudging with camera pan]({{ site.url }}/images/2015-02-01-new-years-resolution-patch/smudge.jpg)
 
-Previously the camera was restricted so it would never draw beyond the edge of the level. Now we're drawing a bigger area around the player, empty space is visible. It looks like the surface the game draws to isn't cleared every frame, leaving the remnants of the previous frame hanging around. I'll need to figure out away to clear it before the background is drawn to it, then we should be all set!
+Previously the camera was restricted so it would never draw beyond the edge of the level. Now we're drawing a bigger area around the player, empty space is visible. It looks like the surface the game draws to isn't cleared every frame, leaving the remnants of the previous frame hanging around. I'll need to figure out a way to clear it before the background is drawn to it, then we should be all set!
 
 I also still need to add some validation of command line arguments, and I'll make a follow up post with it (and hopefully the full source code) attached once it's ready.
