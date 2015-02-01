@@ -58,7 +58,7 @@ To ease both rendering and logic load, games often skip (or cull) objects which 
 
 Note the extra dudes in the bottom right. Amazing! I then jumped over to my project and made the code a bit more generic, using a `std::map<uint32_t, const uint8_t*>` to store arrays of bytes to be patched in, indexed by their memory address. And that's where I'm at. There is still one pretty glaring issue:
 
-[!Smudging with camera pan]({{ site.url }}/images/2015-02-01-new-years-resolution-patch/smudge.jpg)
+![Smudging with camera pan]({{ site.url }}/images/2015-02-01-new-years-resolution-patch/smudge.jpg)
 
 Previously the camera was restricted so it would never draw beyond the edge of the level. Now we're drawing a bigger area around the player, empty space is visible. It looks like the surface the game draws to isn't cleared every frame, leaving the remnants of the previous frame hanging around. I'll need to figure out away to clear it before the background is drawn to it, then we should be all set!
 
