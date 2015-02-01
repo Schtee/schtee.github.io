@@ -54,7 +54,7 @@ As I mentioned earlier, even with the resolution patches applied there are still
 
 To ease both rendering and logic load, games often skip (or cull) objects which aren't visible. I could see some calls to functions operating on Rects (`IntersectRect`/`OffsetRect`), and figured this could be the logic for culling offscreen objects, still using the hardcoded 640x480. Applying a couple more patches to bring these up to 720p I was presented with this:
 
-[!Less culling]({{ site.url }}/images/2015-02-01-new-years-resolution-patch/lessCulling.jpg)
+![Less culling]({{ site.url }}/images/2015-02-01-new-years-resolution-patch/lessCulling.jpg)
 
 Note the extra dudes in the bottom right. Amazing! I then jumped over to my project and made the code a bit more generic, using a `std::map<uint32_t, const uint8_t*>` to store arrays of bytes to be patched in, indexed by their memory address. And that's where I'm at. There is still one pretty glaring issue:
 
