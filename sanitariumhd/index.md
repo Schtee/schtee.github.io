@@ -6,8 +6,8 @@ title: "Sanitarium HD Patcher"
 [Get it here!](https://mega.co.nz/#!7RwDDaZY!Ts2QdBGvtjI1sjAGjDTKJuf-T-zjQdrB3OqDO7Tjnaw)
 
 ## Previous versions
-[v0.2.0](https://mega.co.nz/#!WVYn3KpT!cUdhaV5KNV6yOdc69zTpeeISMkdHVsagyVmR7tR7bHs)
-[v0.1.0](https://mega.co.nz/#!WMhRWCbA!ToWWJXusiszTNnpKYIuC9BjxSE9iJos8qyu5P0D-kJQ)
+* [v0.2.0](https://mega.co.nz/#!WVYn3KpT!cUdhaV5KNV6yOdc69zTpeeISMkdHVsagyVmR7tR7bHs)
+* [v0.1.0](https://mega.co.nz/#!WMhRWCbA!ToWWJXusiszTNnpKYIuC9BjxSE9iJos8qyu5P0D-kJQ)
 
 A little runtime, in-memory patcher to allow Sanitarium to run at a resolution
 of your chosing! As the patch is applied in memory it will **not** modify your
