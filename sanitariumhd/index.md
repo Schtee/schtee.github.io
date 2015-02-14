@@ -2,14 +2,20 @@
 layout: default
 title: "Sanitarium HD Patcher"
 ---
-# Sanitarium HD Patcher v0.2.0
-[Get it here!](https://mega.co.nz/#!WVYn3KpT!cUdhaV5KNV6yOdc69zTpeeISMkdHVsagyVmR7tR7bHs)
+# [Sanitarium HD Patcher v0.2.1](http://makegames.co.uk/sanitariumhd/)
+[Get it here!](https://mega.co.nz/#!7RwDDaZY!Ts2QdBGvtjI1sjAGjDTKJuf-T-zjQdrB3OqDO7Tjnaw)
+
+## Previous versions
+[v0.2.0](https://mega.co.nz/#!WVYn3KpT!cUdhaV5KNV6yOdc69zTpeeISMkdHVsagyVmR7tR7bHs)
+[v0.1.0](https://mega.co.nz/#!WMhRWCbA!ToWWJXusiszTNnpKYIuC9BjxSE9iJos8qyu5P0D-kJQ)
 
 A little runtime, in-memory patcher to allow Sanitarium to run at a resolution
 of your chosing! As the patch is applied in memory it will **not** modify your
 files.
 
 # Changelog
+* v0.2.1
+	* Changed to statically linking runtime, to avoid dependency
 * v0.2.0
 	* Added support for current GOG build
 	* Added support for another disc version
