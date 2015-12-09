@@ -3,7 +3,7 @@ layout: default
 title: "Sanitarium HD Patcher"
 ---
 # [Sanitarium HD Patcher v0.2.1](http://makegames.co.uk/sanitariumhd/)
-[Get it here!](https://github.com/Schtee/SanitariumHDPatcher/releases/tag/v0.2.1)
+[Get it here!](https://github.com/Schtee/SanitariumHDPatcher/releases/download/v0.2.1/SanitariumHDPatcher.0.2.1.zip)
 
 ## Previous versions
 * v0.2.0 - lost
