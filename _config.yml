@@ -5,3 +5,5 @@ highlighter: pygments
 markdown: redcarpet
 paginate: 5
 featured_article_count: 3
+
+theme: jekyll-theme-cayman
