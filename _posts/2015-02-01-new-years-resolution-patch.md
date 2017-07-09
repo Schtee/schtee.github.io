@@ -40,10 +40,10 @@ A quick bit of googling showed me that in order to modify executable code on the
 
 The target's executable code is memory mapped to an offset from a `base address`. For 32 bit Windows programs, this address is 0x00400000. I referred to the patches I made in Olly to get the address which needed to be modified. As can be seen in the screenshot of the debugger, we started with a `PUSH 1E0`, followed by a `PUSH 280` (480 and 640 in hexadecimal). The compiled [x86](http://en.wikipedia.org/wiki/X86) machine code for `PUSH [some 4 byte value]` is `68 [some 4 byte value in little-endian]` - `68 E001000` in our exaple. In this case, and most cases we'll need to deal with, we can leave the `PUSH` (`68`) part untouched, and only change the operand (`E001000`). The program I wrote takes the desired resolution (x and y) as command line arguments and parses them as an unsigned 16 bit integer. We can then take a pointer to one of these values, cast it to a pointer to a byte, and treat it as a little-endian 2-byte array, like so:
 
-```
+{% highlight c++ %}
 uint16_t resY = parseInt(resYString);
 uint8_t* resYBytes = (uint8_t*)&resY;
-```
+{% endhighlight %}
 
 The `PUSH 1E0` happens at 0x0041A5FF. We can leave the first byte as `68` for `PUSH`, and just modify the 2 bytes at 0x0041A600/0x0041A601, to the 2 bytes of `resYBytes`. To do this we can use [`WriteProcessMemory`](https://msdn.microsoft.com/en-us/library/windows/desktop/ms681674%28v=vs.85%29.aspx), passing the offset we found with Olly as the `lpBaseAddress` param, the 2 byte array representing the dimension (e.g. `resYBytes`) as `lpBuffer`, and then the size to write as 2. That's basically all there is to it. Once the patch for setting resolution width and height are applied, my program closes and lets the game carry on as normal.
 
