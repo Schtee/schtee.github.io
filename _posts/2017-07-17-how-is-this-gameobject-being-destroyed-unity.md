@@ -3,7 +3,6 @@ layout: post
 title: "How and Why Is This Object Being Destroyed, Unity?!"
 date: 2017-07-17
 ---
-# 
 I recently ran up against a problem in a Unity project I'm working on: a `GameObject` was being `Destroy`ed, but I didn't know why or from where. The codebase, naturally, has many calls to `Destroy()` and contains its own methods with that name, which made both *Find References* and text-based searches impractical. I just wanted a breakpoint in `UnityEngine.Object.Destroy()`.
 
 ## Round 1: `OnDestroy()`
