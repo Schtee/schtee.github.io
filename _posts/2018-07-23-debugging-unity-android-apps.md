@@ -12,7 +12,7 @@ To summarise the [StackOverflow post](https://stackoverflow.com/questions/423925
 ```
 adb logcat -c
 adb logcat > out.txt
-(launch game on device
+(launch game on device)
 (wait some period of time)
 (CTRL + C)
 ```
