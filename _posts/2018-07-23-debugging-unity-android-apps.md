@@ -23,4 +23,4 @@ adb logcat > out.txt
 Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,defer=y,address=0.0.0.0:56785
 ```
 
-If you add the device's IP address, with the port from above to the Visual Studio *Attach Unity Debugger* window, it should now connect, obey breakpoints and the like!
+If you add the device's IP address with the port from above to the Visual Studio *Attach Unity Debugger* window, it should now connect, obey breakpoints and the like!
