@@ -3,3 +3,7 @@ url: stevet.me
 title: Stephen Taylor
 twitter_username: schtee
 github_username: schtee
+
+site:
+  github:
+    is_project_page: false

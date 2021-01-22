@@ -1,0 +1,7 @@
+---
+layout: default
+---
+{% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+<h1><a href="{{ page.url | relative_url }}">{{ page.title | escape }}</a></h1>
+<h5>{{ page.date | date: date_format }}</h5>
+{{content}}
