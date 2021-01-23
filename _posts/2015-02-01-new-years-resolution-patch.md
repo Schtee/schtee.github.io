@@ -11,19 +11,19 @@ I wanted a target for which no fan patch already existed. I was browsing [GOG](h
 ## Hacking Commences
 The first step was to figure out what resolution the game runs at out of the box. To do this, I took a screenshot of the game running windowed (command line param `-w`, if you're interested), and highlighted the rectangle excluding the standard windows border stuff. I'm sure there are more scientific ways to tell the size of a window, but this worked for me.
 
-![Original window](/images/2015-02-01-new-years-resolution-patch/originalSize.jpg)
+[![Original window](/images/2015-02-01-new-years-resolution-patch/originalSize.jpg)](/images/2015-02-01-new-years-resolution-patch/originalSize.jpg)
 
 I deduced the game to be rendering at a 90s-classic 640x480. I opened up game in the trusty debugger, [OllyDBG](http://www.ollydbg.de/), and began investigating the heck out of it.
 
 I searched for the number constant 480, set a breakpoint on each reference and ran the game. One of these was hit very early on in the initialization, and was proceded by a reference to 640 - strong candidate! (ignore the fact that the offsets are from `patched` - I'd already backed up the original executable)
 
-![Reference to 640x480](/images/2015-02-01-new-years-resolution-patch/referencesTo640x480.jpg)
+[![Reference to 640x480](/images/2015-02-01-new-years-resolution-patch/referencesTo640x480.jpg)](/images/2015-02-01-new-years-resolution-patch/referencesTo640x480.jpg)
 
 I used Olly to patch the 640/480 values to 1280/720 respectively, and ran the game. The window was now 720p, with the main menu occupying the upper-left corner, but once in game it was rendering a much larger visible area. See below for comparison
 
-[![Original playfield](/images/2015-02-01-new-years-resolution-patch/originalPlayfield_t.jpg)]({{ site.url }}/images/2015-02-01-new-years-resolution-patch/originalPlayfield.jpg)
+[![Original playfield](/images/2015-02-01-new-years-resolution-patch/originalPlayfield_t.jpg)](/images/2015-02-01-new-years-resolution-patch/originalPlayfield_t.jpg)
 
-[![720p playfield](/images/2015-02-01-new-years-resolution-patch/720pPlayfield_t.jpg)]({{ site.url }}/images/2015-02-01-new-years-resolution-patch/720pPlayfield.jpg)
+[![720p playfield](/images/2015-02-01-new-years-resolution-patch/720pPlayfield_t.jpg)](/images/2015-02-01-new-years-resolution-patch/720pPlayfield_t.jpg)
 
 If you're familiar with the game you'll notice that all the game objects outside of the 640x480 camera the game is expecting aren't drawn. I'll address this later, but at this point I got ambitious(/distracted). The changes made in Olly can be saved out as a modified .exe, which can be used in the future. This would *technically* let me distribute the patched executable, allowing the wider internet to play the game at high-res. However, there are a couple of drawbacks:
 
@@ -50,15 +50,15 @@ The `PUSH 1E0` happens at 0x0041A5FF. We can leave the first byte as `68` for `P
 ## Culling me softly
 As I mentioned earlier, even with the resolution patches applied there are still some objects inside the newly-embiggened viewport which are not being drawn. Jumping back into Olly, I continued searching for 640/480. This lead me to the area of code below:
 
-![Some rect math](/images/2015-02-01-new-years-resolution-patch/rectMath.jpg)
+[![Some rect math](/images/2015-02-01-new-years-resolution-patch/rectMath.jpg)](/images/2015-02-01-new-years-resolution-patch/rectMath.jpg)
 
 To ease both rendering and logic load, games often skip (or cull) objects which aren't visible. I could see some calls to functions operating on Rects (`IntersectRect`/`OffsetRect`), and figured this could be the logic for culling offscreen objects, still using the hardcoded 640x480. Applying a couple more patches to bring these up to 720p I was presented with this:
 
-![Less culling](/images/2015-02-01-new-years-resolution-patch/lessCulling.jpg)
+[![Less culling](/images/2015-02-01-new-years-resolution-patch/lessCulling.jpg)](/images/2015-02-01-new-years-resolution-patch/lessCulling.jpg)
 
 Note the extra dudes in the bottom right. Amazing! I then jumped over to my project and made the code a bit more generic, using a `std::map<uint32_t, const uint8_t*>` to store arrays of bytes to be patched in, indexed by their memory address. And that's where I'm at. There is still one pretty glaring issue:
 
-![Smudging with camera pan](/images/2015-02-01-new-years-resolution-patch/smudge.jpg)
+[![Smudging with camera pan](/images/2015-02-01-new-years-resolution-patch/smudge.jpg)](/images/2015-02-01-new-years-resolution-patch/smudge.jpg)
 
 Previously the camera was restricted so it would never draw beyond the edge of the level. Now we're drawing a bigger area around the player, empty space is visible. It looks like the surface the game draws to isn't cleared every frame, leaving the remnants of the previous frame hanging around. I'll need to figure out a way to clear it before the background is drawn to it, then we should be all set!
 

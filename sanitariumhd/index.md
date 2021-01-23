@@ -2,7 +2,7 @@
 layout: default
 title: "Sanitarium HD Patcher"
 ---
-# [Sanitarium HD Patcher v0.2.1](http://makegames.co.uk/sanitariumhd/)
+# [Sanitarium HD Patcher v0.2.1](http://stevet.me/sanitariumhd/)
 [Get it here!](https://github.com/Schtee/SanitariumHDPatcher/releases/download/v0.2.1/SanitariumHDPatcher.0.2.1.zip)
 
 ## Previous versions
@@ -52,4 +52,4 @@ where previous frames drawn outside the original 640x480 viewport will remain
 
 Enjoy!
 by [Schtee](http://www.twitter.com/schtee) |
-[MakeGames.co.uk](http://www.makegames.co.uk)
+[SteveT.me](http://stevet.me)

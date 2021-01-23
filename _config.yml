@@ -1,9 +1,8 @@
 theme: jekyll-theme-slate
-url: stevet.me
+url: http://stevet.me
 title: Stephen Taylor
 twitter_username: schtee
 github_username: schtee
 
-site:
-  github:
-    is_project_page: false
+github:
+  is_project_page: false
