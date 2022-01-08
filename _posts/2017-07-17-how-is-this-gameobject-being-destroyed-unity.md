@@ -5,17 +5,17 @@ date: 2017-07-17
 ---
 I recently ran up against a problem in a Unity project I'm working on: a `GameObject` was being `Destroy`ed, but I didn't know why or from where. The codebase, naturally, has many calls to `Destroy()` and contains its own methods with that name, which made both *Find References* and text-based searches impractical. I just wanted a breakpoint in `UnityEngine.Object.Destroy()`.
 
-## Round 1: `OnDestroy()`
+### Round 1: `OnDestroy()`
 *Spoilers: you may well know this method is a dead-end.*
 
 Unity will automatically call `OnDestroy()` on all components on a destroyed `GameObject`. I thought this might allow me to set a breakpoint, but `OnDestroy()` is deferred to the end of the frame, so the callstack doesn't go back to the original `Destroy()` call. Next!
 
-## Round 2: Hacking Unity's IL
+### Round 2: Hacking Unity's IL
 A discussion with a friend led to the idea of modifying the [.NET IL](https://en.m.wikipedia.org/wiki/Common_Intermediate_Language) in Unity's DLLs to modify the contents of `UnityEngine.Object.Destroy()`. I Googled upon [Simple Assembly Explorer](https://sites.google.com/site/simpledotnet/simple-assembly-explorer), which allows you to view and modify the IL of compiled .NET binaries. Without any prior knowledge of .NET IL I was quickly able to insert a `ldarg.0`, to push `this` onto the stack as the argument for the next function call, and a `call` instruction, to call out to `UnityEngine.Debug.LogWarning`, which would give me a stack trace.
 I booted up my project in Unity and sure enough, every call to `Destroy` produced the log I hacked in there. Amazing!
 While this worked, it felt very fragile: any future update to Unity would stamp over this, and I didn't fancy learning IL to build this out further.
 
-## Round 3: Harmony
+### Round 3: Harmony
 I was aware of the concept of [hooking/detours](https://www.codeproject.com/Articles/30140/API-Hooking-with-MS-Detours) from lower level, C++/assembly code, and was interested whether something similar existed for .NET/C#/Mono/Unity. Google led me to [Harmony on GitHub](https://github.com/pardeike/Harmony):
 
 > A library for patching, replacing and decorating .NET and Mono methods during runtime.

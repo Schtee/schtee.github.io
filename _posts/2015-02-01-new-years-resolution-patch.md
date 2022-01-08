@@ -6,9 +6,9 @@ date: 2015-02-01
 I guess that title would have worked better a month ago.
 
 Anyhow. I've always been fascinated by [software reverse engineering](http://en.wikipedia.org/wiki/Reverse_engineering#Reverse_engineering_of_software) and general binary hackery, but had never really thought of a project to try it out on. Then I remembered the [Fallout High Resolution Patch](http://falloutmods.wikia.com/wiki/Fallout1_High_Resolution_Patch) and the [Infinity Engine Widescreen Mod](http://www.gibberlings3.net/widescreen/), which apply cracking/patching techniques to allow old games designed at 1990s resolutions to run at glorious 1080p. I decided to do something similar.
-## Targeting
+### Targeting
 I wanted a target for which no fan patch already existed. I was browsing [GOG](http://www.gog.com), and saw that the game [Sanitarium](http://www.gog.com/game/sanitarium) had recently been added. I remembered that I already had a copy installed on my PC - perfect! Target acquired.
-## Hacking Commences
+### Hacking Commences
 The first step was to figure out what resolution the game runs at out of the box. To do this, I took a screenshot of the game running windowed (command line param `-w`, if you're interested), and highlighted the rectangle excluding the standard windows border stuff. I'm sure there are more scientific ways to tell the size of a window, but this worked for me.
 
 [![Original window](/images/2015-02-01-new-years-resolution-patch/originalSize.jpg)](/images/2015-02-01-new-years-resolution-patch/originalSize.jpg)
@@ -31,7 +31,7 @@ If you're familiar with the game you'll notice that all the game objects outside
 * It's pretty inflexible: everyone using my modified executable would be stuck with the resolution I chose. Also if further changes were required a new modified executable would have to be obtained
 Solution: patch the executable in memory right before running it, just as Olly does.
 
-## Rolling a debugger
+### Rolling a debugger
 A quick bit of googling showed me that in order to modify executable code on the fly in Windows you basically have to write a debugger. This sounded very intimidating. I continued my research and it turned out to be conceptually very simple. All that's required is a C++ project to do the following:
 
 * Make a call to [`CreateProcess`](https://msdn.microsoft.com/en-us/library/windows/desktop/ms682425%28v=vs.85%29.aspx), passing the `DEBUG_PROCESS` flag. This starts a child process owned by your executable, which sends debugger-relevant events to your code.
@@ -47,7 +47,7 @@ uint8_t* resYBytes = (uint8_t*)&resY;
 
 The `PUSH 1E0` happens at 0x0041A5FF. We can leave the first byte as `68` for `PUSH`, and just modify the 2 bytes at 0x0041A600/0x0041A601, to the 2 bytes of `resYBytes`. To do this we can use [`WriteProcessMemory`](https://msdn.microsoft.com/en-us/library/windows/desktop/ms681674%28v=vs.85%29.aspx), passing the offset we found with Olly as the `lpBaseAddress` param, the 2 byte array representing the dimension (e.g. `resYBytes`) as `lpBuffer`, and then the size to write as 2. That's basically all there is to it. Once the patch for setting resolution width and height are applied, my program closes and lets the game carry on as normal.
 
-## Culling me softly
+### Culling me softly
 As I mentioned earlier, even with the resolution patches applied there are still some objects inside the newly-embiggened viewport which are not being drawn. Jumping back into Olly, I continued searching for 640/480. This lead me to the area of code below:
 
 [![Some rect math](/images/2015-02-01-new-years-resolution-patch/rectMath.jpg)](/images/2015-02-01-new-years-resolution-patch/rectMath.jpg)
