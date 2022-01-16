@@ -3,5 +3,10 @@ title: Stephen Taylor
 twitter_username: schtee
 github_username: schtee
 
-github:
-  is_project_page: false
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"

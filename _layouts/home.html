@@ -3,11 +3,24 @@ layout: default
 ---
 {{ content }}
 
+{% if page.micros %}
+  {% assign micros_page = true %}
+{% else %}
+  {% assign micros_page = false %}
+{% endif %}
+
 {% for post in site.posts %}
-  {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
-      <div class="post">
-        <h2><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
-        <h3>{{ post.date | date: date_format }}</h3>
-        {{ post.content }}
-      </div>
+  {% if post.categories contains 'micros' %}
+    {% assign micros_post = true %}
+  {% else %}
+    {% assign micros_post = false %}
+  {% endif %}
+  {% if micros_page == micros_post %}
+    {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+        <div class="post">
+          <h2><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
+          <h3>{{ post.date | date: date_format }}</h3>
+          {{ post.content }}
+        </div>
+  {% endif %}
 {% endfor %}
