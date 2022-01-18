@@ -1,6 +1,11 @@
 ---
 ---
 
+// tip from https://stackoverflow.com/questions/9201968/content-jumps-horizontally-whenever-browser-adds-a-scrollbar/9202094 to adjust for scrollbar width
+html {
+    margin-left: calc(100vw - 100%);
+}
+
 body {
     margin: 0 auto;
     width: 100%;
