@@ -2,5 +2,5 @@
 
 # 2022
 ## January
-=> 2022-01-11-i-guess-i-have-a-gemini-server.gmi I Guess I Have A Gemini Server
 => 2022-01-21-why-and-how.gmi Why And How
+=> 2022-01-11-i-guess-i-have-a-gemini-server.gmi I Guess I Have A Gemini Server
