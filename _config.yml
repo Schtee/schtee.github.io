@@ -1,7 +1,11 @@
 url: http://ste.vet
+author: Stephen Taylor
 title: Stephen Taylor
+description: A blog by Stephen "Schtee" Taylor
 twitter_username: schtee
 github_username: schtee
+plugins:
+  - jekyll-feed
 
 defaults:
   -
