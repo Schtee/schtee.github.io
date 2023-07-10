@@ -10,6 +10,8 @@ body {
 	max-width: 576px;
 	font-family: "Iowan Old Style","Iowan","Georgia",serif;
 	line-height: 2;
+	background-color: #eeeeee;
+	color: #303030;
 }
 
 .post h2 {
