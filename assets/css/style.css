@@ -1,0 +1,70 @@
+/* tip from https://stackoverflow.com/questions/9201968/content-jumps-horizontally-whenever-browser-adds-a-scrollbar/9202094 to adjust for scrollbar width */
+html {
+	margin-left:calc(100vw - 100%);
+}
+
+body {
+	margin: 30px auto;
+	width: 100%;
+	padding: 0 48px;
+	max-width: 576px;
+	font-family: "Iowan Old Style","Iowan","Georgia",serif;
+	line-height: 2;
+}
+
+.post h2 {
+	margin-bottom: 5px;
+	text-decoration: underline #8b8b8b;
+	color: #575757;
+}
+
+.post h3 {
+	margin-top: 5px;
+}
+
+.post p {
+	font-weight: 400;
+	font-size: 17px;
+}
+
+a, a:visited, a:active, a:hover {
+	text-decoration: underline #8b8b8b;
+	color: #575757;
+}
+
+a:hover, a:active {
+	color: #404040;
+}
+
+.post p>code {
+	background-color: #f0f0f0;
+	border: 1px solid #cccccc;
+	padding: 0 5px;
+}
+
+.post pre, .post blockquote {
+	background-color: #f0f0f0;
+	border: 1px solid #cccccc;
+}
+
+.post pre, .post blockquote {
+	padding-left: 50px;
+	overflow: auto;
+}
+
+.post pre, .post blockquote+p {
+	white-space: pre-line;
+}
+
+.post blockquote {
+	margin-left: 0;
+	font-style: italic;
+}
+
+.post {
+	margin-bottom: 100px;
+}
+
+.post img {
+	max-width: 100%;
+}

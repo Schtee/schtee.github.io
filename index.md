@@ -1,6 +1,4 @@
 ---
-title: "Stevet.me"
+title: "ste.vet"
 layout: home
 ---
-## Welcome!
-I am Stephen ["Schtee"](http://twitter.com/schtee) Taylor, and *this* is the internet!

@@ -2,6 +2,8 @@
 layout: default
 ---
 {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
-<h2><a href="{{ page.url | relative_url }}">{{ page.title | escape }}</a></h2>
-<h3>{{ page.date | date: date_format }}</h3>
+<div class="post">
+	<h2><a href="{{ page.url | relative_url }}">{{ page.title | escape }}</a></h2>
+	<h3>{{ page.date | date: date_format }}</h3>
 {{content}}
+</div>
