@@ -14,14 +14,14 @@ body {
 	color: #303030;
 }
 
-.post h2 {
+.post h2, .post h3 {
 	margin-bottom: 5px;
-	text-decoration: underline #8b8b8b;
-	color: #575757;
+	line-height: normal;
 }
 
-.post h3 {
-	margin-top: 5px;
+.post h2 {
+	text-decoration: underline #8b8b8b;
+	color: #575757;
 }
 
 .post p {
@@ -38,15 +38,13 @@ a:hover, a:active {
 	color: #404040;
 }
 
-.post p>code {
+.post p>code, .post pre, .post blockquote {
 	background-color: #f0f0f0;
 	border: 1px solid #cccccc;
-	padding: 0 5px;
 }
 
-.post pre, .post blockquote {
-	background-color: #f0f0f0;
-	border: 1px solid #cccccc;
+.post p>code {
+	padding: 0 5px;
 }
 
 .post pre, .post blockquote {
@@ -63,10 +61,22 @@ a:hover, a:active {
 	font-style: italic;
 }
 
-.post {
-	margin-bottom: 100px;
-}
-
 .post img {
 	max-width: 100%;
+}
+
+.post:after {
+	content: "";
+	width: 50%;
+	border-top: 1px dotted #cccccc;
+	display: block;
+	margin: 50px auto;
+}
+
+#me ul {
+	padding: inherit;
+}
+
+#me ul li {
+	list-style-type:  none;
 }
