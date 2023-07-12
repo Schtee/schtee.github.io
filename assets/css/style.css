@@ -41,6 +41,7 @@ a:hover, a:active {
 .post p>code, .post pre, .post blockquote {
 	background-color: #f0f0f0;
 	border: 1px solid #cccccc;
+	padding: 16px 25px;
 }
 
 .post p>code {
@@ -50,6 +51,7 @@ a:hover, a:active {
 .post pre, .post blockquote {
 	padding-left: 50px;
 	overflow: auto;
+	margin: 16px 25px;
 }
 
 .post pre, .post blockquote+p {
@@ -57,7 +59,6 @@ a:hover, a:active {
 }
 
 .post blockquote {
-	margin-left: 0;
 	font-style: italic;
 }
 
