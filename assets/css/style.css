@@ -76,10 +76,12 @@ a:hover, a:active {
 	margin: 50px auto;
 }
 
-#me ul {
+#me ul, #nav ul {
 	padding: inherit;
 }
 
-#me ul li {
+#me ul li, #nav ul li {
 	list-style-type:  none;
+	display: inline;
+	margin-right: 0.25em;
 }
