@@ -75,6 +75,10 @@ a:hover, a:active {
 	display: block;
 }
 
+.post .more {
+	text-align: center;
+}
+
 .post:after {
 	content: "";
 	width: 50%;

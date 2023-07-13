@@ -20,7 +20,11 @@ layout: default
 		<div class="post">
 			<h2 class="post-heading"><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
 			<p class="post-date">{{ post.date | date: date_format }}</p>
-			{{ post.content }}
+			{% assign truncated = post.content | split: "</p>" | slice: 0, 3 | join: "</p>" %}
+			{{ truncated }}
+			{% if truncated.size < post.content.size %}
+			<p class="more"><a href="{{ post.url | relative_url }}">[More]</a></p>
+			{% endif %}
 		</div>
 	{% endif %}
 {% endfor %}
