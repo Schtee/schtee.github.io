@@ -18,8 +18,8 @@ layout: default
 	{% if micros_page == micros_post %}
 	{% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
 		<div class="post">
-			<h2><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
-			<h3>{{ post.date | date: date_format }}</h3>
+			<h2 class="post-heading"><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
+			<p class="post-date">{{ post.date | date: date_format }}</p>
 			{{ post.content }}
 		</div>
 	{% endif %}

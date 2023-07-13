@@ -14,14 +14,21 @@ body {
 	color: #303030;
 }
 
-.post h2, .post h3 {
+.post .post-heading, .post .post-date {
 	margin-bottom: 5px;
 	line-height: normal;
 }
 
-.post h2 {
+.post .post-heading {
 	text-decoration: underline #8b8b8b;
 	color: #575757;
+}
+
+.post .post-date {
+	color: #8b8b8b;
+	font-weight: normal;
+	margin: 0;
+	padding: 0 20px;
 }
 
 .post p {
