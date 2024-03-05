@@ -12,6 +12,7 @@ body {
 	line-height: 2;
 	background-color: #eeeeee;
 	color: #303030;
+	font-size: 0.6cm;
 }
 
 .post .post-heading, .post .post-date {
@@ -33,7 +34,6 @@ body {
 
 .post p {
 	font-weight: 400;
-	font-size: 17px;
 }
 
 a, a:visited, a:active, a:hover {
