@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+
+	<head>
+		<meta charset='utf-8'>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,maximum-scale=2">
+		<link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css">
+		<link rel="alternate" type="application/atom+xml" title="Feed for ste.vet" href="/feed.xml" />
+		<link rel="webmention" href="https://webmention.io/ste.vet/webmention" />
+		<title>Steve Taylor, Code whisperer</title>
+
+		<script>
+			const url = new URL(window.location.href);
+			const stay = url.searchParams.get("stay") != null;
+			if (!stay) {
+				window.location = "{{ page.redirect }}"
+			}
+		</script>
+
+		<noscript>
+			<meta http-equiv="refresh" content="0; url={{ page.redirect }}" />
+		</noscript>
+	</head>
+
+	<body>
+		<div id="header">
+			<h1><a href="{{ site.url }}" class="h-card">{{ site.title}}</a></h1>
+		</div>
+
+		<div id="content">
+			Redirecting to <a href="{{ page.redirect}}">{{page.redirect}}</a>
+		</div>
+
+		<div id="footer">
+			<div id="nav">
+				<ul>
+					<li><a href="/feed.xml">Atom Feed</a></li>
+					<li><a href="gemini://g.ste.vet" title="Read on gemini">gemini</a></li>
+				</ul>
+			</div>
+			<div id="me">
+				<ul>
+					<li><a href="https://mastodon.gamedev.place/@schtee" rel="me">Mastodon</a></li>
+					<li><a href="https://github.com/schtee" rel="me">GitHub</a></li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

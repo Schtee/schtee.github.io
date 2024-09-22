@@ -61,7 +61,7 @@ a:hover, a:active {
 	margin: 16px 25px;
 }
 
-.post pre, .post blockquote+p {
+.post blockquote+p {
 	white-space: pre-line;
 }
 

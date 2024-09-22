@@ -8,9 +8,18 @@ plugins:
   - jekyll-feed
 
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
       type: "posts"
     values:
       layout: "post"
+  - scope:
+      path: ""
+      type: "redirects"
+    values:
+      layout: "redirect"
+
+collections:
+  redirects:
+    output: true
+    permalink: /s/:name/index.html
