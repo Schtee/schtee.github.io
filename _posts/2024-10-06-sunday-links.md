@@ -1,0 +1,8 @@
+---
+title: 2024-10-06 Sunday Links
+---
+- [Getting my daily news from a dot matrix printer - Andrew Schmelyun](https://aschmelyun.com/blog/getting-my-daily-news-from-a-dot-matrix-printer/) via [Ben Werdmuller](https://werd.io/2024/getting-my-daily-news-from-a-dot-matrix-printer) - we had (old) printers like this in the home growing up and there would be something very nostalgic about reading a daily roundup on dot matrix paper
+- [DOOM ported to run almost entirely on AMD GPUs - GamingOnLinux](https://www.gamingonlinux.com/2024/10/doom-ported-to-run-almost-entirely-on-amd-gpus/) - don't waste your spare GPUs mining crypto or generating derivative artwork- play Doom instead! More importantly, today I learnt that LLVM can compile C++ to run on the GPU, via [AMDGPU](https://llvm.org/docs/AMDGPUUsage.html) and [NVPTX](https://llvm.org/docs/NVPTXUsage.html) backends.
+- [Experiencing Old Games In New Eras - Brain Baking](https://brainbaking.com/post/2024/09/experiencing-old-games-in-new-eras/) - thoughts on how even playing games on original hardware can't recreate the original experience
+> even if you manage to grab a few other nerdy friends that cling onto their original hardware like I do. There’s nothing left to explore: everything is available on the internet; on GameFAQs, Wikis, fan pages, disassembly articles, generators
+- [Ruffle for Libretro - Jesse Makes Things](https://jesse.tg/projects/ruffle) - I stumbled upon a RetroArch/libretro core for Adobe/Macromedia Flash. I'd love to get this building for ARM handhelds. Maybe I shall try!
