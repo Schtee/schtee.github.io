@@ -96,3 +96,11 @@ a:hover, a:active {
 	display: inline;
 	margin-right: 0.25em;
 }
+
+tr:nth-child(even), th {
+  background-color: #e0e0e0;
+}
+
+tr:nth-child(odd) {
+  background-color: #e8e8e8;
+}
