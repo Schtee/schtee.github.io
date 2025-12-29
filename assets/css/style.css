@@ -69,6 +69,10 @@ a:hover, a:active {
 	font-style: italic;
 }
 
+.post blockquote p {
+	margin: 5px 0;
+}
+
 .post img {
 	max-width: 100%;
 	margin: auto;
