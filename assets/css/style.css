@@ -90,6 +90,11 @@ a:hover, a:active {
 	display: inline;
 }
 
+.post table {
+	max-width: 100%;
+	overflow: scroll;
+}
+
 .post .more {
 	text-align: center;
 }
