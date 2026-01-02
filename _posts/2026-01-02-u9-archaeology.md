@@ -23,7 +23,7 @@ After a lot of scrolling through in images, I found these:
 ![Editor tool palette: Britain](images/2026-01-02-u9-archaeology/EditorBRITAIN.png)
 ![Editor tool palette: Buccaneer's Den](images/2026-01-02-u9-archaeology/EditorBUCCANEERSDEN.png)
 ![Editor tool palette: C](images/2026-01-02-u9-archaeology/EditorC.png)
-![Editor tool palette: Caverns](images/2026-01-02-u9-archaeology/EditorCaverns.png)
+![Editor tool palette: Caverns](images/2026-01-02-u9-archaeology/EditorCAVERNS.png)
 ![Editor tool palette: Citadel](images/2026-01-02-u9-archaeology/EditorCITADL.png)
 ![Editor tool palette: Cities](images/2026-01-02-u9-archaeology/EditorCITIES.png)
 ![Editor tool palette: Clothing](images/2026-01-02-u9-archaeology/EditorCLOTH.png)
