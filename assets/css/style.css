@@ -79,6 +79,17 @@ a:hover, a:active {
 	display: block;
 }
 
+.post .inline {
+	display:grid;
+	place-items: center;
+	margin: auto;
+	width: 100%;
+}
+
+.post .inline img {
+	display: inline;
+}
+
 .post .more {
 	text-align: center;
 }
