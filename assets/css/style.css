@@ -92,6 +92,7 @@ a:hover, a:active {
 
 .post table {
 	max-width: 100%;
+	display: block;
 	overflow: scroll;
 }
 
