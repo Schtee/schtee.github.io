@@ -7,7 +7,7 @@ I found myself looking at screenshots of the early development of Ultima IX. [Th
 
 I couldn't find any modern-Windows-compatible tools for viewing the U9 asset files, but I found some pretty [extensive documentation](https://wiki.ultimacodex.com/wiki/Ultima_IX_internal_formats), so I figured I'd just roll my own. You can now [find it on Github](https://github.com/Schtee/u9ed).
 
-After a lot of scrolling through in images, I found these: 
+After a lot of scrolling through images, I found these: 
 
 <div class="inline" markdown="1">
 
@@ -113,7 +113,7 @@ The final interesting find was this character art, featuring Teenage Mutant Ninj
 
 ![An image of two four-armed alien folk](/images/2026-01-02-u9-archaeology/AlienConceptArt.png)
 
-If you're interesting in having a poke around these files, you can check out my [projecet on Github](https://github.com/Schtee/u9ed), or I later found that [this person](http://jfregnault.free.fr/Ultima9/Ultima9.htm) has already dumped the images online. I shall now resume my wait for the digital playground for the new millennium.
+If you're interested in having a poke around these files, you can check out my [projecet on Github](https://github.com/Schtee/u9ed), or I later found that [this person](http://jfregnault.free.fr/Ultima9/Ultima9.htm) has already dumped the images online. I shall now resume my wait for the digital playground for the new millennium.
 
 <div class="inline" markdown="1">
 
