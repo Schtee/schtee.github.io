@@ -88,7 +88,7 @@ After a lot of scrolling through in images, I found these:
 ![Editor tool palette: Vehicles](/images/2026-01-02-u9-archaeology/EditorVEHIC.png)
 ![Editor tool palette: Water](/images/2026-01-02-u9-archaeology/EditorWATER.png)
 ![Editor tool palette: Weapons](/images/2026-01-02-u9-archaeology/EditorWEAPO.png)
-![Editor tool palette: Work in progress(/?)](images/2026-01-02-u9-archaeology/EditorWORK.png)
+![Editor tool palette: Work in progress(/?)](/images/2026-01-02-u9-archaeology/EditorWORK.png)
 ![Editor tool palette: Wrong](/images/2026-01-02-u9-archaeology/EditorWRONG.png)
 
 </div>
