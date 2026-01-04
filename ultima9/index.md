@@ -38,6 +38,7 @@ Link | Description
 -|-
 [Ultima 9 model importer](https://github.com/Chevluh/Ultima-9-Blender-Importer) | Python script to convert models and terrain to Blender format
 [u9ed](https://github.com/Schtee/u9ed) | My C# project to view and export bitmaps
+[vgmstream](https://vgmstream.org/) | Can play/export U9 sfx/music/speech
 
 #### Docs
 
