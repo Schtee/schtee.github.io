@@ -15,7 +15,7 @@ Link | EXE Build Date | Notes
 
 #### General demo notes
 
-- Neither of these demos contain `bitmapC.flx`, suggested the DXT1 compression came very late in the day
+- Neither of these demos contain `bitmapC.flx`, suggesting the DXT1 compression came very late in the day
 
 #### CGW Demo notes
 
