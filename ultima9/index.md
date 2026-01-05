@@ -21,14 +21,24 @@ Link | EXE Build Date | Notes
 
 - Features an intro video explainer from ya boi Richie G not found in the other demo (`demo_introf.mpg`)
 - Only contains 16 bit graphics (i.e. `bitmapsh.flx` is empty)
+- I compared the contents of `bitmap16.flx` with the retail version and there are differences but I didn't find anything _juicy_
 - `music.flx` and `speech.flx` are in a `Sound` folder on the disk, not part of the install
   - `music.flx` is the same as the other demo but `speech.flx` is huge - 4,962 KB vs 138,773 KB. It's bigger even than the retail release's 138,194 KB
     - There's actually quite a lot of speech here that isn't in the retail install
 	- Including a `Demon_` character (6 clips) that doesn't appear at all
+	- A lot of lines appear here without post-processing applied:
+		- A bunch of Avatar lines have been sped up a little in retail
+		- `DupreGhost` clips don't have their spoooooky echo etc applied in the demo
+		- `GenericGargoyle` haven't been pitched down/had reverb applied
+		- `Oracle` has different type of spooky effect applied vs retail
+		- In the demo, `Peiter_02498.umt` begins "Say what a bout that pirate girl, Raven?". In retail "Raven" is scrambled out for some reason.
+	- `Avatar_10332`: "Why is Britain so lacking in Compassion?". Yup.
+	- There are some lines of Guardian admonishing the avatar for attacking children, which I'm guessing was cut for obvious reasons
 
 #### PC Gamer Demo notes
 
 - Only contains 8-bit palette indexed graphics (i.e. `bitmap16.flx` is empty)
+- I compared the contents of `bitmapsh.flx` with the retail version and there are differences but I didn't find anything _juicy_
 
 ### Resources
 
@@ -46,9 +56,3 @@ Link | Description
 -|-
 [Ultima IX internal formats @ Ultima Codex](https://wiki.ultimacodex.com/wiki/Ultima_IX_internal_formats) | Details on a bunch of game files
 [Ultima 9 File Formats @ Burton Radons](https://web.archive.org/web/20201011190817/https://sites.google.com/site/burtonradons/eee/platforms/single-games/ultima-ix/file-formats) | An archive of a page with some details
-
-### TODO List
-
-- [ ] Investigate extra `speech.flx` clips
-- [ ] Investigate differences in `sfx.flx`
-- [ ] Investigate differences in the sprites
