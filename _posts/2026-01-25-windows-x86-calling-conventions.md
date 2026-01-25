@@ -1,5 +1,5 @@
 ---
-title: Windows x86 C++ Calling Conventions
+title: Windows x86 C++ Calling Conventions Cheat Sheet
 ---
 Noodling with reverse engineering Windows applications needs me to know these things but they refuse to stick in my brain, so I have put them in one place.
 
